@@ -10,7 +10,3 @@ ENV N8N_EXTERNAL_HOOK_URL=https://n8n-trainning.onrender.com
 
 # Expose Render's assigned port
 EXPOSE $PORT
-
-# Start n8n (entrypoint comes from base image, so no "n8n not found" error)
-CMD ["tini", "--", "n8n", "start", "--port", "$PORT"]
-
