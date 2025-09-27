@@ -1,6 +1,10 @@
 # Use official n8n image
 FROM n8nio/n8n:latest
 
-# Render automatically sets $PORT for web services
-EXPOSE 5678
+# Render provides $PORT, so we must use it
+ENV N8N_PORT=$PORT
+EXPOSE $PORT
+
+CMD ["sh", "-c", "n8n start --port $PORT"]
+
 
